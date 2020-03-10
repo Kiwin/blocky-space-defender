@@ -3,11 +3,16 @@
   "compilerOptions": {
     "watch": true,
     "target": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "outDir": "Build"
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "outDir": "Build",
+    "esModuleInterop": true
   },
   "include": [
-    "src/**/*", "test.ts"
+    "src/**/*",
+    "test.ts"
   ],
   "exclude": [
     "node_modules"

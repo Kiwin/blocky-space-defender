@@ -1,11 +1,65 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <script src="game.js">      
-      
-    </script>
-  </head>
-  <body onload="init();">
-    <canvas id="demoCanvas" width="800" height="800" style="background-color: aquamarine;"></canvas>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Space Defender</title>
+
+  <!-- Blockly scripts -->
+  <script src="../google-blockly-1a77a5e/blockly_compressed.js"></script>
+  <script src="../google-blockly-1a77a5e/blocks_compressed.js"></script>
+  <script src="../google-blockly-1a77a5e/msg/js/en.js"></script>
+
+  <!-- Game scripts -->
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="game.js"></script>
+
+  <!-- Style -->
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+      display: flex;
+    }
+
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+  </style>
+</head>
+
+<body onload="init();">
+
+  <!-- Blockly Element -->
+  <div id="blocklyDiv" style="height: auto; width: 50%;"></div>
+
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="controls_repeat_ext"></block>
+    <block type="math_number">
+      <field name="NUM">123</field>
+    </block>
+    <block type="math_arithmetic"></block>
+    <block type="text"></block>
+    <block type="text_print"></block>
+  </xml>
+
+
+  <!-- Game Element -->
+  <canvas id="gameCanvas" width="800" height="800" style="background-color: aquamarine;"></canvas>
+
+
+
+  <script>
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+      {
+        media: '../../media/',
+        toolbox: document.getElementById('toolbox')
+      });
+  </script>
+
+</body>
+
 </html>
