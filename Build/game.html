@@ -17,9 +17,13 @@
   <!-- Style -->
   <style>
     body {
-      background-color: #fff;
+      background-color: #eee;
       font-family: sans-serif;
-      display: flex;
+    }
+
+    main {
+      display: grid;
+      flex-direction: row;
     }
 
     h1 {
@@ -31,26 +35,29 @@
 
 <body onload="init();">
 
-  <!-- Blockly Element -->
-  <div id="blocklyDiv" style="height: auto; width: 50%;"></div>
-
-  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <block type="controls_if"></block>
-    <block type="logic_compare"></block>
-    <block type="controls_repeat_ext"></block>
-    <block type="math_number">
-      <field name="NUM">123</field>
-    </block>
-    <block type="math_arithmetic"></block>
-    <block type="text"></block>
-    <block type="text_print"></block>
-  </xml>
+  <main>
 
 
-  <!-- Game Element -->
-  <canvas id="gameCanvas" width="800" height="800" style="background-color: aquamarine;"></canvas>
+    <!-- Blockly Element -->
+    <div id="blocklyDiv" style="height: 800px; width: 800px;"></div>
+
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="controls_repeat_ext"></block>
+      <block type="math_number">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic"></block>
+      <block type="text"></block>
+      <block type="text_print"></block>
+    </xml>
 
 
+    <!-- Game Element -->
+    <canvas id="gameCanvas" width="800" height="800" style="background-color: aquamarine;"></canvas>
+
+  </main>
 
   <script>
     var demoWorkspace = Blockly.inject('blocklyDiv',

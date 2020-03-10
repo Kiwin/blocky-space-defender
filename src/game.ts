@@ -90,6 +90,14 @@ class Turret extends GameEntity {
 //class Projectile extends GameEntity {}
 //class SpaceShip extends GameEntity {}
 
+function resizeCanvas() {
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.canvas.width = window.innerWidth / 2;
+  ctx.canvas.height = window.innerHeight / 2;
+  //...drawing code...
+}
+
 function init() {
   GAME.stage = new createjs.Stage("gameCanvas");
   const turrets = [];
